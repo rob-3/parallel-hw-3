@@ -28,7 +28,7 @@ Yes. See the implementation. Checks must be made to ensure this has not happened
 
 # Problem 2
 
-I use a lock-free approach to implementing the reporting system. Each thread independently takes measurements, and then atomically compares to sorted values in three arrays of length 4. If the value is extreme enough to warrant recording, the exact location is optimistically located, and a `.compareAndSet()` attempted, with appropriate handling if the value has been overwritten.
+I use a lock-free approach to implementing the reporting system. Each thread independently takes measurements, and then atomically compares to sorted values in three arrays of length 5. If the value is extreme enough to warrant recording, the exact location is optimistically located, and a `.compareAndSet()` attempted, with appropriate handling if the value has been overwritten.
 
 > Discuss the efficiency ... of your design.
 
